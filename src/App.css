@@ -1,5 +1,10 @@
-.App {
-  text-align: center;
+.App{
+  background: url('./images/planet-solar.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: auto;
 }
 
 .App-logo {
