@@ -1,0 +1,26 @@
+.content {
+
+display: block;
+border-radius: 3px;
+}
+
+.nav-bar-content {
+
+display: flex;
+justify-content: flex-end;
+padding: 70px 50px 0px 20px;
+color: white;
+
+}
+
+.background {
+width: 150px;
+height: 150px;
+background-color: #C59C89;
+}
+
+ul > li {
+
+    list-style: none;
+
+}
