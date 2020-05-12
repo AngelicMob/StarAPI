@@ -2,16 +2,16 @@ import React from 'react';
 import './navbar.css';
 
 
-const Navbar = () => {
+const Navbar = ({tab}) => {
 
 return (
 
 <nav className ="nav-bar-content">
 
     <ul>
-        <li>Add new Info</li>
+        <li onClick = {() => tab('Search')}>Add new Info</li>
         <br></br>
-        <li>Favorites</li>
+        <li onClick = {() => tab('Favorite')}>Favorites</li>
     </ul>
 
 </nav>

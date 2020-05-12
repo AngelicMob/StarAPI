@@ -1,24 +1,26 @@
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar/navbar';
-import List from './components/List/list';
+import React, { useState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar/navbar";
+import List from "./components/List/list";
 
 function App() {
+  const [select, setSelect] = useState("Search");
+
+  function changeSelect(selected) {
+    setSelect(selected);
+  }
+
   return (
-    <div className = "App">
+    <div className="App">
+      <Navbar tab={(data) => changeSelect(data)} />
 
-    <Navbar/>
-
-    <h1 className ="title">
-      STAR WARS</h1>
+      <h1 className="title">STAR WARS</h1>
       <br></br>
-    <p>Create and add your favorites from the star war's universe</p>
+      <p>Create and add your favorites from the star war's universe</p>
 
-    <br></br>
+      <br></br>
 
-    <List/>
-
-
+      <List send={select} />
     </div>
   );
 }

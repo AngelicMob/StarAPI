@@ -1,136 +1,106 @@
-import React, {useState, useEffect} from 'react';
-import ListItem from './ListItem/list-item'
-import FavoriteItems from './Favorite/Favorite';
-import './list.css';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import ListItem from "./ListItem/list-item";
+import FavoriteItems from "./Favorite/Favorite";
+import "./list.css";
+import axios from "axios";
 
 let people = [];
 let planets = [];
 
 const PeopleFavSection = [];
-const PlanetsFavSection = []
+const PlanetsFavSection = [];
 
 function requestAPIPeople(setCharacters, peopleUrl) {
-
-    for(let i = 1; i < 10;i++){
-
-        axios.get(peopleUrl+'?page='+i)
-        .then(res => {
-          people.push(...res.data.results)
-          setCharacters([...people])
-        })
-        .catch(err => console.log(err))
-      }
-
+  for (let i = 1; i < 10; i++) {
+    axios
+      .get(peopleUrl + "?page=" + i)
+      .then((res) => {
+        people.push(...res.data.results);
+        setCharacters([...people]);
+      })
+      .catch((err) => console.log(err));
+  }
 }
 
 function requestAPIPlanets(setPlanet, planetsUrl) {
-
-    for(let i = 1; i < 7;i++){
-
-        axios.get(planetsUrl+'?page='+i)
-        .then(res => {
-          planets.push(...res.data.results)
-          setPlanet([...planets])
-        })
-        .catch(err => console.log(err))
-      }
-
-
+  for (let i = 1; i < 7; i++) {
+    axios
+      .get(planetsUrl + "?page=" + i)
+      .then((res) => {
+        planets.push(...res.data.results);
+        setPlanet([...planets]);
+      })
+      .catch((err) => console.log(err));
+  }
 }
-
-
-
 
 // function removeFromFavList(id, category) {
 
-
-
 // }
-
 
 //storing the different people and planets saved
 
-
-
 // List component//
-const List = () => {
+const List = ({ send }) => {
+  const peopleUrl = "https://swapi.dev/api/people/";
+  const planetsUrl = "https://swapi.dev/api/planets/";
+  const [characters, setCharacters] = useState([]);
+  const [planet, setPlanet] = useState([]);
+  const [favoriteCharacters, setFavoriteCharacters] = useState([]);
+  const [favoritePlanets, setFavoritePlanets] = useState([]);
 
-    const peopleUrl = 'https://swapi.dev/api/people/';
-    const planetsUrl = 'https://swapi.dev/api/planets/';
-    const [characters, setCharacters ] = useState([]);
-    const [planet, setPlanet ] = useState([]);
-    const [favoriteCharacters, setFavoriteCharacters] = useState([])
-    const [favoritePlanets, setFavoritePlanets] = useState([])
+  useEffect(() => {
+    requestAPIPeople(setCharacters, peopleUrl);
+    requestAPIPlanets(setPlanet, planetsUrl);
+  }, []);
 
+  function setToFavList(id, category) {
+    // takes an id element and a category upon calling this function
 
-    useEffect(() => {
-        requestAPIPeople(setCharacters, peopleUrl);
-        requestAPIPlanets(setPlanet, planetsUrl);
+    if (category === "people") {
+      if (PeopleFavSection.some((addedFav) => addedFav.name === id.name)) {
+        console.log("this one already exists in your favorite list");
+      } else {
+        let peoplefav = [];
 
-    },[])
-
-
-    function setToFavList(id, category){ // takes an id element and a category upon calling this function
-
-      if (category === 'people') {
-
-        if (PeopleFavSection.some((addedFav) => addedFav.name === id.name))  {
-
-          console.log ('this one already exists in your favorite list');
-
-        }
-
-        else {
-          let peoplefav = [];
-
-          peoplefav = [...peoplefav, id]
-          PeopleFavSection.push(...peoplefav)
-          setFavoriteCharacters([...PeopleFavSection]);
-        }
-
+        peoplefav = [...peoplefav, id];
+        PeopleFavSection.push(...peoplefav);
+        setFavoriteCharacters([...PeopleFavSection]);
       }
-
-      //planetsfavsection
-      else {
-
-        if (PlanetsFavSection.some((addedFav) => addedFav.name === id.name))  {
-
-          console.log ('this one already exists in your favorite list');
-
-        }
-
-        else {
-          let planetfav = [];
-
-          planetfav = [...planetfav, id]
-          PlanetsFavSection.push(...planetfav)
-          setFavoritePlanets([...PlanetsFavSection]);
-        }
-
-
-
-      }
-
-
     }
 
-        return (
+    //planetsfavsection
+    else {
+      if (PlanetsFavSection.some((addedFav) => addedFav.name === id.name)) {
+        console.log("this one already exists in your favorite list");
+      } else {
+        let planetfav = [];
 
-        <div className="list-content">
+        planetfav = [...planetfav, id];
+        PlanetsFavSection.push(...planetfav);
+        setFavoritePlanets([...PlanetsFavSection]);
+      }
+    }
+  }
 
-            <ListItem peopleInfo={characters} planetsInfo = {planet} addFavo = {(id, category) => {setToFavList(id, category)}}  />
-
-            <FavoriteItems setFavPeople={favoriteCharacters} setFavPlanet = {favoritePlanets}/>
-
-        </div>
-
-
-    );
-
-
+  return (
+    <div className="list-content">
+      {send === "Search" ? (
+        <ListItem
+          peopleInfo={characters}
+          planetsInfo={planet}
+          addFavo={(id, category) => {
+            setToFavList(id, category);
+          }}
+        />
+      ) : (
+        <FavoriteItems
+          setFavPeople={favoriteCharacters}
+          setFavPlanet={favoritePlanets}
+        />
+      )}
+    </div>
+  );
 };
 
 export default List;
-
-
