@@ -13,14 +13,11 @@ color: white;
 
 }
 
-.background {
-width: 150px;
-height: 150px;
-background-color: #C59C89;
-}
+
 
 ul > li {
 
     list-style: none;
+    cursor: pointer;
 
 }

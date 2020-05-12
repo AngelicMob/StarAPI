@@ -1,10 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/navbar';
-import ListItem from './components/List/ListItem/list-item';
 import List from './components/List/list';
-
-
 
 function App() {
   return (
@@ -19,7 +16,6 @@ function App() {
 
     <br></br>
 
-    <ListItem/>
     <List/>
 
 
