@@ -1,3 +1,4 @@
+
 * {
 
     padding: 0;
@@ -9,13 +10,34 @@
     height: 100%;
   }
 
-  .search-bar {
+div.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+}
+
+div.card-container {
+  border-bottom: 1px solid grey;
+  background-color: rgba(0,0,0, 0.30);
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+}
+div.card-container:nth-child(odd){
+  border-right: 1px solid grey;
+}
+
+.search-bar {
 
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: none;
   }
 
   .search {
@@ -84,5 +106,5 @@
 
   .favoriteButton {
 
-    
+
   }

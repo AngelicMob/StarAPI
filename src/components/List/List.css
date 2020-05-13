@@ -1,14 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
 
-.buttontest {
-    height: 40px;
-    width: 100px;
-    background-color: rgb(52, 153, 153);
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 10px;
-    border-style: none;
-    justify-content: center;
-
-}

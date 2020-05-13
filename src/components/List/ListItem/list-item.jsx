@@ -18,15 +18,23 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
     .map((e) => (
       <div className='card' key={e.name}>
         <div className='card-container'>
-          <h6>Character</h6>
-                <div>Name:{e.name}</div>
+        <br></br>
+        <br></br>
+
+        <div className ="cards">
+                <h4>Character</h4>
+          <hr></hr>
+                <div>Name: {e.name}</div>
                 <div>Eye-color: {e.eye_color}</div>
-                <div>Age:{e.birth_year}</div>
-                <div>Hair-color:{e.hair_color}</div>
+                <div>Age: {e.birth_year}</div>
+                <div>Hair-color: {e.hair_color}</div>
 
           <button className='favoriteButton' onClick={() => addFavo(e, 'people')}>
-            Add To Favorites
+                Add To Favorites
           </button>
+        </div>
+
+
         </div>
       </div>
     ))
@@ -41,13 +49,16 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
     .map((e) => (
       <div className='card' key={e.name}>
         <div className='card-container'>
-          <h6>Planet</h6>
-              <div>Name: {e.name}</div>
-              <div>Climate: {e.climate}</div>
-              <div>Terrain: {e.terrain}</div>
-          <button className='favoriteButton' onClick={() => addFavo(e, 'planets')}>
-            Add To Favorites
-          </button>
+          <div className = "cards">
+                <h4>Planet</h4>
+            <hr></hr>
+                <div>Name: {e.name}</div>
+                <div>Climate: {e.climate}</div>
+                <div>Terrain: {e.terrain}</div>
+            <button className='favoriteButton' onClick={() => addFavo(e, 'planets')}>
+              Add To Favorites
+            </button>
+            </div>
         </div>
       </div>
     ))

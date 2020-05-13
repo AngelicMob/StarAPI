@@ -12,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+
       <Navbar tab={(data) => changeSelect(data)} />
 
       <h1 className="title">STAR WARS</h1>

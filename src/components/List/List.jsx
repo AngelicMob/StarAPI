@@ -34,9 +34,6 @@ function requestAPIPlanets(setPlanet, planetsUrl) {
   }
 }
 
-// function removeFromFavList(id, category) {
-
-// }
 
 //storing the different people and planets saved
 
@@ -57,6 +54,7 @@ const List = ({ send }) => {
   function setToFavList(id, category) {
     // takes an id element and a category upon calling this function
 
+    //peoplefavsection
     if (category === "people") {
       if (PeopleFavSection.some((addedFav) => addedFav.name === id.name)) {
         console.log("this one already exists in your favorite list");
@@ -83,6 +81,12 @@ const List = ({ send }) => {
     }
   }
 
+  // function removeFromFavList(id, category) {
+
+
+
+  // }
+
   return (
     <div className="list-content">
       {send === "Search" ? (
@@ -97,6 +101,7 @@ const List = ({ send }) => {
         <FavoriteItems
           setFavPeople={favoriteCharacters}
           setFavPlanet={favoritePlanets}
+
         />
       )}
     </div>
