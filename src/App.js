@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/navbar";
-import List from "./components/List/list";
+import List from "./components/List/List";
 
 function App() {
   const [select, setSelect] = useState("Search");
