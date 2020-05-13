@@ -1,0 +1,69 @@
+/* .category-buttons {
+    display: flex;
+    width: 100%;
+  }
+  .gategory-buttons > button {
+    background-color: #96bb53;
+    padding: 0.5em;
+    border: 1px solid rgba(117, 114, 114, 0.185);
+    width: 16.66%;
+    opacity: 0.95;
+  }
+  .gategory-buttons > .activeClass {
+    background-color: #efc748;
+  } */
+
+
+.removeButton {
+  font-weight: bold;
+  margin-top: 13px;
+  font-size: 0.9rem;
+  height: 40px;
+  width: 185px;
+  background-color: transparent;
+  border: 2px solid rgba(0, 255, 255, 0.719);
+  color:white;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 17px
+}
+
+.removeButton:hover {
+
+    background-color: rgba(14, 194, 194, 0.719);
+    transition: ease-in-out 0.5s;
+
+}
+
+
+@media (max-width: 686px) {
+
+    .removeButton {
+        font-weight: bold;
+        margin-top: 13px;
+        font-size: 0.9rem;
+        height: 50px;
+        width: 160px;
+        background-color: transparent;
+        border: 2px solid rgba(0, 255, 255, 0.719);
+        color:white;
+        cursor: pointer;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        font-size: 17px
+      }
+
+      .button-group {
+          display:flex;
+          align-items: center;
+
+      }
+
+  }
+
+
+
+

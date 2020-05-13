@@ -18,11 +18,12 @@
   overflow-y: scroll;
   max-height: 750px;
   min-height: 250px;
-  border-bottom-left-radius: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  /* border-top-left-radius: 25px;
+  border-top-right-radius: 25px; */
   padding-top: 40px;
 
  }
@@ -67,10 +68,10 @@ div.cards {
 
 .cards > button {
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 13px;
   font-size: 0.9rem;
   height: 40px;
-  width: 150px;
+  width: 185px;
   background-color: #527A9E;
   color:white;
   border-radius: 8px;
@@ -81,17 +82,17 @@ div.cards {
 .cards > .info-cards {
   display: flexbox;
   justify-content: flex-start;
-  margin-top: 20px;
+  margin-top: 28px;
   border-bottom: 1px solid grey;
 }
 
-
 .info-cards {
     text-align: left;
+    line-height: 37px;
     margin: 1em;
 }
 
-h4 {
+h3 {
   font-weight: bold;
   text-decoration: underline;
   color: rgb(240, 238, 236);

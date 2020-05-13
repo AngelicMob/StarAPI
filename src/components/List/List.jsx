@@ -70,10 +70,9 @@ const List = ({ send }) => {
     //planetsfavsection
     else {
       if (PlanetsFavSection.some((addedFav) => addedFav.name === id.name)) {
-        console.log("this one already exists in your favorite list");
+        console.log("This one already exists in your favorite list");
       } else {
         let planetfav = [];
-
         planetfav = [...planetfav, id];
         PlanetsFavSection.push(...planetfav);
         setFavoritePlanets([...PlanetsFavSection]);
@@ -81,11 +80,22 @@ const List = ({ send }) => {
     }
   }
 
-  // function removeFromFavList(id, category) {
+  function removeFromFavList(id, category) {
+    if (category === 'people') {
+      const indexofPeople = PeopleFavSection.indexOf(id)
+      if (indexofPeople > -1) {
+        PeopleFavSection.splice(indexofPeople, 1)
+      }
+      setFavoriteCharacters([...PeopleFavSection])
+    } else {
+      const indexofPlanets = PlanetsFavSection.indexOf(id)
+      if (indexofPlanets > -1) {
+        PlanetsFavSection.splice(indexofPlanets, 1)
+      }
+      setFavoritePlanets([...PlanetsFavSection])
+    }
+  }
 
-
-
-  // }
 
   return (
     <div className="list-content">
@@ -107,7 +117,7 @@ const List = ({ send }) => {
             <FavoriteItems
               setFavPeople={favoriteCharacters}
               setFavPlanet={favoritePlanets}
-
+              removeFav= {(id, category) => removeFromFavList(id, category)}
             />
           </div>
       )}

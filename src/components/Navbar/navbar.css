@@ -19,13 +19,6 @@ text-align: center;
 
 }
 
-.nav-bg-color {
-    background-color: #C59C89;
-    display: grid;
-    grid-template-columns: 5fr;
-
-}
-
 ul > li {
 
     list-style: none;

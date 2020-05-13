@@ -13,7 +13,6 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
         el.eye_color.toLowerCase().match(input.toLowerCase()) ||
         el.birth_year.toLowerCase().match(input.toLowerCase()) ||
         el.hair_color.toLowerCase().match(input.toLowerCase())
-
     )
     .map((e) => (
       <div className='card' key={e.name}>
@@ -22,7 +21,7 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
         <br></br>
 
         <div className ="cards">
-                <h4>Character</h4>
+                <h3>Character</h3>
 
               <div className ="info-cards">
                 <div>Name: {e.name}</div>
@@ -31,7 +30,6 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
                 <div> Hair-color: {e.hair_color}</div>
 
               </div>
-
 
           <button className='favoriteButton' onClick={() => addFavo(e, 'people')}>
                 Add To Favorites
@@ -54,7 +52,7 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
       <div className='card' key={e.name}>
         <div className='card-container'>
           <div className = "cards">
-                <h4>Planet</h4>
+                <h3>Planet</h3>
               <div className ="info-cards">
                 <div>Name: {e.name}</div>
                 <div> Climate: {e.climate}</div>
