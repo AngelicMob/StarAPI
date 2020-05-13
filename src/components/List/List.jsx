@@ -90,19 +90,26 @@ const List = ({ send }) => {
   return (
     <div className="list-content">
       {send === "Search" ? (
-        <ListItem
-          peopleInfo={characters}
-          planetsInfo={planet}
-          addFavo={(id, category) => {
-            setToFavList(id, category);
-          }}
-        />
-      ) : (
-        <FavoriteItems
-          setFavPeople={favoriteCharacters}
-          setFavPlanet={favoritePlanets}
 
-        />
+
+        <div className ="list-border">
+          <ListItem
+            peopleInfo={characters}
+            planetsInfo={planet}
+            addFavo={(id, category) => {
+              setToFavList(id, category);
+            }}
+          />
+        </div>
+      ) : (
+
+          <div className ="list-border">
+            <FavoriteItems
+              setFavPeople={favoriteCharacters}
+              setFavPlanet={favoritePlanets}
+
+            />
+          </div>
       )}
     </div>
   );

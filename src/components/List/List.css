@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+div.list-border {
+
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: 0 auto;
+    
+
+}
+
+
+
+
+
+
 
 

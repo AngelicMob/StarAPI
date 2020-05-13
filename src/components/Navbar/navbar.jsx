@@ -9,7 +9,7 @@ return (
 <nav className ="nav-bar-content">
 
     <ul>
-        <li onClick = {() => tab('Search')}>Add new Info</li>
+        <li onClick = {() => tab('Search')}>Search</li>
         <br></br>
         <li onClick = {() => tab('Favorite')}>Favorites</li>
     </ul>

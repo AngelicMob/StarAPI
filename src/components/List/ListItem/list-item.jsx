@@ -23,11 +23,15 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
 
         <div className ="cards">
                 <h4>Character</h4>
-          <hr></hr>
+
+              <div className ="info-cards">
                 <div>Name: {e.name}</div>
-                <div>Eye-color: {e.eye_color}</div>
-                <div>Age: {e.birth_year}</div>
-                <div>Hair-color: {e.hair_color}</div>
+                <div> Eye-color: {e.eye_color}</div>
+                <div> Age: {e.birth_year}</div>
+                <div> Hair-color: {e.hair_color}</div>
+
+              </div>
+
 
           <button className='favoriteButton' onClick={() => addFavo(e, 'people')}>
                 Add To Favorites
@@ -51,14 +55,17 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
         <div className='card-container'>
           <div className = "cards">
                 <h4>Planet</h4>
-            <hr></hr>
+              <div className ="info-cards">
                 <div>Name: {e.name}</div>
-                <div>Climate: {e.climate}</div>
-                <div>Terrain: {e.terrain}</div>
+                <div> Climate: {e.climate}</div>
+                <div> Terrain: {e.terrain}</div>
+
+              </div>
+
             <button className='favoriteButton' onClick={() => addFavo(e, 'planets')}>
               Add To Favorites
             </button>
-            </div>
+          </div>
         </div>
       </div>
     ))
@@ -77,15 +84,12 @@ const ListItem = ({peopleInfo, planetsInfo, addFavo}) => {
               </div>
             </div>
 
-            <div className = "list-items">
+
                 <div className = "list">
 
-              {PeopleAndplanetFilter}
-
+                  {PeopleAndplanetFilter}
 
                 </div>
-
-            </div>
 
           </div>
 

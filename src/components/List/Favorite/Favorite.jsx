@@ -12,11 +12,13 @@ const FavoriteItems = ({setFavPeople, setFavPlanet}) => {
             <div className="cards">
             <hr></hr>
                 <h4>Character</h4>
+                <div className ="info-cards">
                   <div>Name: {e.name}</div>
                   <div>Eye-color: {e.eye_color}</div>
                   <div>Age: {e.birth_year}</div>
                   <div>Hair-color: {e.hair_color}</div>
-                  <hr></hr>
+
+                </div>
             <button className='favoriteButton'>
               Add To Favorites
             </button>
@@ -34,11 +36,13 @@ const FavoriteItems = ({setFavPeople, setFavPlanet}) => {
             <div className='card-container'>
                 <div className = "cards">
                     <h4>Planet</h4>
-                <hr></hr>
+
+                <div className ="info-cards">
                     <div>Name: {e.name}</div>
                     <div>Climate: {e.climate}</div>
                     <div>Terrain: {e.terrain}</div>
-                    <hr></hr>
+
+                    </div>
                 <button className='favoriteButton'>
                     Add To Favorites
                 </button>
