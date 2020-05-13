@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ListItem from "./ListItem/list-item";
 import FavoriteItems from "./Favorite/Favorite";
-import "./list.css";
+import "./List.css";
 import axios from "axios";
 
 let people = [];
