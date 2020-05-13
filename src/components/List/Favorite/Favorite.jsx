@@ -33,21 +33,21 @@ const FavoriteItems = ({setFavPeople, setFavPlanet}) => {
 
         .map((e) => (
             <div className='card' key={e.name}>
-            <div className='card-container'>
-                <div className = "cards">
-                    <h4>Planet</h4>
+                <div className='card-container'>
+                    <div className = "cards">
+                        <h4>Planet</h4>
 
-                <div className ="info-cards">
-                    <div>Name: {e.name}</div>
-                    <div>Climate: {e.climate}</div>
-                    <div>Terrain: {e.terrain}</div>
+                    <div className ="info-cards">
+                        <div>Name: {e.name}</div>
+                        <div>Climate: {e.climate}</div>
+                        <div>Terrain: {e.terrain}</div>
 
                     </div>
-                <button className='favoriteButton'>
-                    Add To Favorites
-                </button>
+                    <button className='favoriteButton'>
+                        Add To Favorites
+                    </button>
+                    </div>
                 </div>
-            </div>
             </div>
       ))
 

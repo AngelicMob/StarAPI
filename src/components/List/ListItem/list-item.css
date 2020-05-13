@@ -94,6 +94,7 @@ div.cards {
 h4 {
   font-weight: bold;
   text-decoration: underline;
+  color: rgb(240, 238, 236);
 }
 
 .search-bar {
@@ -174,4 +175,5 @@ h4 {
     grid-template-columns: 1fr;
   }
   }
+
 

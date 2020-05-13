@@ -6,15 +6,15 @@ const Navbar = ({tab}) => {
 
 return (
 
-<nav className ="nav-bar-content">
+    <nav className ="nav-bar-content">
 
-    <ul>
-        <li onClick = {() => tab('Search')}>Search</li>
-        <br></br>
-        <li onClick = {() => tab('Favorite')}>Favorites</li>
-    </ul>
+        <ul>
+            <li onClick = {() => tab('Search')}>Search</li>
+            <br></br>
+            <li onClick = {() => tab('Favorite')}>Favorites</li>
+        </ul>
 
-</nav>
+    </nav>
 
 );
 
